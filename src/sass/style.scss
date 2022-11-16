@@ -1,0 +1,145 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Open Sans", "Helvetica Neue", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 25px 40px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    .view-highscore {
+        color: rgb(214, 157, 240);
+        text-decoration: none;
+    }
+    #time {
+        color: black;
+        transition: color 0.25ms ease-out;
+        &.incorrect {
+            transition: color 0.55ms ease-in;
+            color: rgb(255, 21, 21);
+        }
+    }
+}
+main {
+    position: relative;
+}
+
+main .starter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 700px;
+    margin: 100px auto;
+    button {
+        border: none;
+        border-radius: 5px;
+        padding: 8px 10px;
+        background-color: rgb(53, 28, 117);
+        color: white;
+    }
+}
+
+main .quiz {
+    margin-block: 70px;
+    .options {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        gap: 20px;
+        > button {
+            &:nth-child(1) {
+                text-transform: uppercase;
+            }
+            padding: 10px;
+            padding-right: 30px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: rgb(233, 184, 255);
+            text-align: left;
+            &:hover {
+                background-color: rgb(238, 212, 250);
+                background-color: rgb(228, 170, 255);
+            }
+            &:active {
+                // background-color: rgb(80, 70, 105);
+                // color: #ccc;
+            }
+            &.correct {
+                background-color: rgb(94, 248, 101);
+            }
+            &.incorrect {
+                background-color: rgb(255, 136, 136);
+            }
+        }
+    }
+}
+
+main .complete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .player {
+        display: flex;
+        position: relative;
+        &.new-score::before {
+            content: url("../assets/right.svg");
+            height: 30px;
+            aspect-ratio: 1/1;
+            position: absolute; /*or absolute*/
+            right: calc(100% + 10px);
+            top: 25%;
+        }
+        &:nth-child(even) {
+            background-color: rgb(252, 217, 255);
+        }
+        > span {
+            // flex: 1;
+            height: 50px;
+            width: 250px;
+            outline: 1px solid #ccc;
+            overflow: hidden;
+            text-transform: capitalize;
+            white-space: nowrap;
+        }
+        > span:nth-child(2) {
+            padding-inline-start: 10px;
+        }
+        > span:nth-child(1),
+        span:nth-child(3) {
+            width: 60px;
+            text-align: center;
+        }
+    }
+}
+
+main .pre-complete {
+    width: fit-content;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px auto;
+
+    gap: 20px;
+    h1 {
+        margin: 0;
+    }
+    input {
+        flex: 1;
+    }
+    button {
+        height: 50px;
+        flex-basis: 100%;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 10px;
+        background-color: rgb(53, 28, 117);
+        color: white;
+        font-weight: 500;
+    }
+}
