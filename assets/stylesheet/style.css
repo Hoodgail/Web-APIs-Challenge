@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+header {
+  padding: 70px;
+  margin-bottom: 70px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0px 5px 6px -8px black;
+}
+header > * {
+  text-align: center;
+  font-size: 0.6rem;
+}
+header .title {
+  font-size: 2.6em;
+}
+
+.scheduler_wrapper {
+  padding-inline: 15px;
+  width: 100%;
+}
+.scheduler_wrapper .item {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+}
+.scheduler_wrapper .item {
+  border-inline: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.scheduler_wrapper .item:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top: 1px solid #ccc;
+}
+.scheduler_wrapper .item:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.scheduler_wrapper .item .note {
+  flex: 1;
+}
+.scheduler_wrapper .item .time,
+.scheduler_wrapper .item .save {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+}
+.scheduler_wrapper .item .save {
+  display: block;
+  background-image: url("../img/save.png");
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-color: lightblue;
+  border: inherit;
+}
+.scheduler_wrapper .item .save:is(.obselete .save) {
+  background-color: lightcoral;
+  background-size: 35%;
+  background-image: url("../img/warning.png");
+}
+
+/*# sourceMappingURL=style.css.map */
